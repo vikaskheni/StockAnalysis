@@ -3,11 +3,14 @@ import pandas as pd
 
 data = yf.download('RELIANCE.NS')
 
-data.to_csv('RELIANCE.CSV')  #gives wholesome data about the realiance
+data.to_csv('RELIANCE.CSV')  #gives wholesome data about the reliance
 
 details = pd.read_csv('EQUITY_L.CSV')
 
 print(details.SYMBOL) #gives the name of all listed stock
+
+
+
 
 for name in details.SYMBOL:  #write [0:number of data]
     try:
