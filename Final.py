@@ -74,7 +74,7 @@ import yfinance as yf
 
 
 symbol = 'TCS'
-stock_data = yf.download(f"{symbol}.ns", start='2020-01-01', end='2023-08-10') #yyyy-mm-dd
+stock_data = yf.download(f"{symbol}.ns", start='2020-01-01', end='2023-08-12') #yyyy-mm-dd
 
 
 stock_data['%delivery'] = (stock_data['Volume'] / stock_data['Volume'].sum()) * 100

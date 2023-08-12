@@ -6,7 +6,7 @@ import pandas as pd
 
 def update_eps_data(csv_filename, row_number):
     url = f'https://www.moneycontrol.com/financials/{symbol}/ratiosVI/{symbol}#VI{symbol}'
-
+    #web scrapping https://www.moneycontrol.com/financials/TCS/ratiosVI/%7BTCS#VITCS
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -53,6 +53,6 @@ symbol = 'TCS'  # Stock symbol for Tata Consultancy Services
 csv_filename = f"{symbol}_stock_data.csv"
 update_eps_data(csv_filename,2) #Basic EPS
 update_eps_data(csv_filename,4) #Cash EPS
-update_eps_data(csv_filename,5) #Book Value
+#update_eps_data(csv_filename,5) #Book Value
 update_eps_data(csv_filename,7) #Dividend Value
 
