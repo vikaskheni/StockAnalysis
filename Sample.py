@@ -49,4 +49,4 @@ def GoldenCrossverSignal(name, point):
 
     print(tabulate(df_pos[['Close', 'Position']], headers = 'keys', tablefmt = 'psql'))
 
-GoldenCrossverSignal('MRF', 300)
+GoldenCrossverSignal('TCS', 300)
