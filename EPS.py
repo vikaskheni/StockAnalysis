@@ -53,6 +53,10 @@ symbol = 'TCS'  # Stock symbol for Tata Consultancy Services
 csv_filename = f"{symbol}_stock_data.csv"
 update_eps_data(csv_filename,2) #Basic EPS
 update_eps_data(csv_filename,4) #Cash EPS
-#update_eps_data(csv_filename,5) #Book Value
+update_eps_data(csv_filename,5) #Book Value
 update_eps_data(csv_filename,7) #Dividend Value
 
+stock_data = pd.read_csv(csv_filename)
+stock_data['P/E'] = (stock_data['Close'] / stock_data['Cash EPS (Rs.)'])
+stock_data['P/B (price to book ratio)'] = (stock_data['Close'] / stock_data['Book Value [ExclRevalReserve]/Share (Rs.)'])
+stock_data.to_csv(csv_filename, index=False)
