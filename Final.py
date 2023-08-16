@@ -60,7 +60,7 @@ import yfinance as yf
 import pandas as pd
 
 symbol = 'TCS'
-stock_data = yf.download(f"{symbol}.ns", start='2020-01-01', end='2023-08-15')  #yyyy-mm-dd
+stock_data = yf.download(f"{symbol}.ns", start='2020-07-01', end='2023-08-15')  #yyyy-mm-dd
 
 # Create a new DataFrame to store calculated 52-week high and low
 yearly_high_low = pd.DataFrame()
@@ -75,6 +75,9 @@ for year in stock_data.index.year.unique():
 # Calculate %delivery, Share Delivery, and select columns
 yearly_high_low['%delivery'] = (yearly_high_low['Volume'] / yearly_high_low['Volume'].sum()) * 100
 yearly_high_low['Share Delivery'] = yearly_high_low['Volume'] * yearly_high_low['%delivery'] / 100
+
+
+
 selected_columns = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume', '%delivery', 'Share Delivery', '52_Week_High', '52_Week_Low']
 
 # Create a new DataFrame with the selected columns
