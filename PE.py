@@ -18,7 +18,7 @@ shareholding_section = soup.find(id='shareholding')
 # Find the data-table within the shareholding section
 eps_table = shareholding_section.find('table', class_='data-table')
 
-my_fii ={}
+my_fii = {}
 my_dii = {}
 name_fii = 'FII'
 name_dii = 'DII'
