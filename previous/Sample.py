@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tabulate import tabulate
 def GoldenCrossverSignal(name, point):
-    path = f'./Data/{name}.csv'
+    path = f'../Data/{name}.csv'
     data = pd.read_csv(path,parse_dates=['Date'],index_col='Date') #using for removing the first index
 
 
